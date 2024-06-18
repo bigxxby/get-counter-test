@@ -23,7 +23,7 @@ docker build -t myapp .
 ```
 make run
 or
-docker run -d -p 8080:8080 --name myapp-container myapp
+docker run -it -p 8080:8080 --name myapp-container myapp
 ```
 
 ### 3. Доступ к Swagger UI

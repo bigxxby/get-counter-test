@@ -4,7 +4,7 @@ build:
 	docker build -t myapp .
 
 run:
-	docker run -d -p 8080:8080 --name myapp-container myapp
+	docker run -it -p 8080:8080 --name myapp-container myapp
 
 stop:
 	docker stop myapp-container 
