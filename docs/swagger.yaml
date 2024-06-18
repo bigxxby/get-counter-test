@@ -1,0 +1,48 @@
+definitions:
+  handlers.Message:
+    properties:
+      message:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api/clear:
+    delete:
+      consumes:
+      - application/json
+      description: Сброс текущего значения счетчика в сервисе
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.Message'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.Message'
+      summary: Сбросить значение счетчика
+      tags:
+      - Counter
+  /api/counter:
+    get:
+      consumes:
+      - application/json
+      description: Получение текущего значения счетчика из сервиса
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.Message'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.Message'
+      summary: Получить текущее значение счетчика
+      tags:
+      - Counter
+swagger: "2.0"
